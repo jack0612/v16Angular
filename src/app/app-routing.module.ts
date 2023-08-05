@@ -33,7 +33,7 @@ const routes: Routes = [
     { path: 'app-flex', component: FlexComponent },
     { path: 'angularEmenets', component: AngularElementsComponent },
     { path: 'designPattern', component: DesignPatternComponent },
-    { path: 'dummy', component: SignalComponent },
+    { path: 'signal', component: SignalComponent },
     { path: 'google-maps', component: MyGoogleMapsComponent },
     { path: 'agm', component: AgmComponent },
     { path: 'NestedForm', component: NestedFormComponent },

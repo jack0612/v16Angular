@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconComponent } from './icon/icon.component';
+import { SignalShoppingCart } from './signal-shopping-cart/signal-shopping-cart.component';
 import { SignalComponent } from './signal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,7 +10,7 @@ import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   declarations: [
-    IconComponent,
+    SignalShoppingCart,
     SignalComponent
   ],
   imports: [
