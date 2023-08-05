@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from './icon/icon.component';
-import { DummyComponentComponent } from './dummy-component.component';
+import { SignalComponent } from './signal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from '../material/material.module';
@@ -11,7 +11,7 @@ import { MaterialModule } from '../material/material.module';
 @NgModule({
   declarations: [
     IconComponent,
-    DummyComponentComponent
+    SignalComponent
   ],
   imports: [
     CommonModule,
@@ -20,6 +20,6 @@ import { MaterialModule } from '../material/material.module';
     ReactiveFormsModule,
     MaterialModule,
   ],
-  exports: [DummyComponentComponent]
+  exports: [SignalComponent]
 })
-export class DummyComponentModule { }
+export class SignalModule { }

@@ -23,7 +23,7 @@ import { MercuryComponent } from './mercury/mercury.component';
 import { BootstrapComponent } from './bootstrap/bootstrap.component';
 import { DesignPatternComponent } from './design-pattern/design-pattern.component';
 import { AgmComponent } from './agm/agm.component';
-import { DummyComponentComponent } from './dummy-component/dummy-component.component';
+import { SignalComponent } from './dummy-component/signal.component';
 import { MyGoogleMapsComponent } from './google-maps/google-maps.component';
 import { MyTypescriptComponent } from './my-typescript/my-typescript.component';
 import { AngularElementsComponent } from './angular-elements/angular-elements.component'
@@ -33,7 +33,7 @@ const routes: Routes = [
     { path: 'app-flex', component: FlexComponent },
     { path: 'angularEmenets', component: AngularElementsComponent },
     { path: 'designPattern', component: DesignPatternComponent },
-    { path: 'dummy', component: DummyComponentComponent },
+    { path: 'dummy', component: SignalComponent },
     { path: 'google-maps', component: MyGoogleMapsComponent },
     { path: 'agm', component: AgmComponent },
     { path: 'NestedForm', component: NestedFormComponent },

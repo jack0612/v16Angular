@@ -91,7 +91,7 @@ import { MercuryModule } from './mercury/mercury.module';
 import { BootstrapModule } from './bootstrap/bootstrap.module';
 import { DesignPatternModule } from './design-pattern/design-pattern.module';
 import { AgmModule } from './agm/agm.module'
-import { DummyComponentModule } from './dummy-component/dummy-component.module';
+import { SignalModule } from './dummy-component/signal.module';
 import { BlueButtonComponent } from './blue-button/blue-button.component';
 import { FlexProjectComponent } from './flex/flex-project/flex-project.component';
 import { FlexProject2Component } from './flex/flex-project2/flex-project2.component';
@@ -250,7 +250,7 @@ export const CustomBreakPointsProvider = {
     BootstrapModule,
     DesignPatternModule,
     AgmModule,
-    DummyComponentModule,
+    SignalModule,
     MyGoogleMapsModule,
     MyTypescriptModule,
     AngularElementsModule,
