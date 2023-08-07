@@ -37,10 +37,10 @@ export class SignalShoppingCart {
     this.quantity.update((qty) => qty * 2);
 
     // Interstellar price increase
-    this.selectedVehicle.mutate((v) => v.price = v.price + (v.price * 0.2));
+    this.selectedVehicle.mutate((vehicle) => vehicle.price = vehicle.price + (vehicle.price * 0.2));
 
     // Add selected vehicle to array
-    this.vehicles.mutate(v => v.push(this.selectedVehicle()))
+    this.vehicles.mutate(vehicles => vehicles.push(this.selectedVehicle()));
 
     // Example of an effect
     effect(() => console.log(JSON.stringify(this.vehicles())));

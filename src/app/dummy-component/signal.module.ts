@@ -5,13 +5,15 @@ import { SignalComponent } from './signal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from '../material/material.module';
+import { SignalCounterComponent } from './signal-counter/signal-counter.component';
 
 
 
 @NgModule({
   declarations: [
     SignalShoppingCart,
-    SignalComponent
+    SignalComponent,
+    SignalCounterComponent
   ],
   imports: [
     CommonModule,
