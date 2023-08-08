@@ -18,32 +18,32 @@ export class OutboundByOriginAreaComponent {
   }
   data = [
     {
-      name: 'Solicitados',
+      name: 'Ontario',
       value: 2672,
       itemStyle: {color: 'blue'},
     },
     {
-      name: 'Aprobados',
+      name: 'Quebec',
       value: 1266,
       itemStyle: {color: 'blue'},
     },
     {
-      name: 'Aceptados',
+      name: 'British Columbia',
       itemStyle: {color: 'blue'},
       value: 700,
     },
     {
-      name: 'Cerrados',
+      name: 'Albert',
       value: 489,
       itemStyle: {color: 'grey'},
     },
     {
-      name: 'Negados',
+      name: 'Monitoba',
       value: 489,
       itemStyle: {color: 'grey'},
     },
     {
-      name: 'En revision',
+      name: 'Novia Scotia',
       value: 400,
       itemStyle: {color: 'grey'},
     },
@@ -67,26 +67,15 @@ export class OutboundByOriginAreaComponent {
       value: 50,
       itemStyle: {color: 'grey'},
     },
-  ];
-  colors = {
-    0: '#00000',
-    1: '#eeeee',
-    2: '#ccc',
-    3: '#bcbcbc',
-    4: '#eeffee',
-    5: '#ff0000',
-    6: '#fff000',
-  };
+  ].reverse();
+
   options: EChartsOption = {
-    title: {
-      text: 'World Population',
-    },
-    tooltip: {
-      trigger: 'axis',
-      axisPointer: {
-        type: 'shadow',
-      },
-    },
+    // tooltip: {
+    //   trigger: 'axis',
+    //   axisPointer: {
+    //     type: 'shadow',
+    //   },
+    // },
     grid: {
       left: '3%',
       right: '4%',
@@ -112,7 +101,7 @@ export class OutboundByOriginAreaComponent {
     },
     series: [
       {
-
+        cursor:"default",
         type: 'bar',
         label: {
           show: true,
