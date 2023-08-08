@@ -19,31 +19,53 @@ export class GraphSimpleComponent {
   data = [
     {
       name: 'Solicitados',
-      value: 18203,
+      value: 2672,
+      itemStyle: {color: 'blue'},
     },
     {
       name: 'Aprobados',
-      value: 12000,
+      value: 1266,
+      itemStyle: {color: 'blue'},
     },
     {
       name: 'Aceptados',
-      value: 13203,
+      itemStyle: {color: 'blue'},
+      value: 700,
     },
     {
       name: 'Cerrados',
-      value: 8203,
+      value: 489,
+      itemStyle: {color: 'grey'},
     },
     {
       name: 'Negados',
-      value: 1203,
+      value: 489,
+      itemStyle: {color: 'grey'},
     },
     {
       name: 'En revision',
-      value: 6203,
+      value: 400,
+      itemStyle: {color: 'grey'},
     },
     {
       name: 'En mora',
-      value: 2203,
+      value: 300,
+      itemStyle: {color: 'grey'},
+    },
+    {
+      name: 'En mora',
+      value: 200,
+      itemStyle: {color: 'grey'},
+    },
+    {
+      name: 'En mora',
+      value: 100,
+      itemStyle: {color: 'grey'},
+    },
+    {
+      name: 'En mora',
+      value: 50,
+      itemStyle: {color: 'grey'},
     },
   ];
   colors = {
@@ -74,6 +96,7 @@ export class GraphSimpleComponent {
     xAxis: {
       type: 'value',
       boundaryGap: [0, 0.01],
+      //https://stackoverflow.com/questions/73439675/echarts-hide-xaxis-and-ticks
       splitLine:{ show: false },
       axisLine: { show: false },
       axisTick: { show: false },
@@ -85,7 +108,7 @@ export class GraphSimpleComponent {
       axisLine: { show: false },
       axisTick: { show: false },
       axisLabel: { show: true },
-      data: this.data.map((item) => item.name).reverse(),
+      data: this.data.map((item) => item.name),
     },
     series: [
       {
@@ -95,16 +118,7 @@ export class GraphSimpleComponent {
           show: true,
           position: 'right'
         },
-        data: this.data.map((item) => item.value).reverse(),
-        // itemStyle: {
-        //   color: function (param) {
-        //     console.log(param);
-        //     return this.colors[param.dataIndex];
-        //   },
-        // },
-        // label: {
-        //   position: 'top'
-        // },
+        data: this.data
         // markPoint: {
         //   symbolSize: 1,
         //   symbolOffset: [0, '50%'],
