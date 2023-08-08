@@ -6,11 +6,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from '../material/material.module';
 import { NgxEchartsModule } from 'ngx-echarts';
-import { GraphSimpleComponent } from './graph-simple/graph-simple.component'
+import { GraphSimpleComponent } from './graph-simple/graph-simple.component';
+import { BarComponent } from '../my-echart/bar/bar.component'
 
 
 @NgModule({
-  declarations: [LineChartComponent, MyEchartComponent, GraphSimpleComponent],
+  declarations: [LineChartComponent, MyEchartComponent, GraphSimpleComponent, BarComponent],
   imports: [
     CommonModule,
     BrowserModule,
