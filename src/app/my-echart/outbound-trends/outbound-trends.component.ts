@@ -65,7 +65,30 @@ export class OutboundTrendsComponent {
         name: 'sales',
         type: 'line',
         stack: 'total',
-        data: [120, 132, 101, 134, 90, 230, 210]
+        data: [120, 132, 101, 134, 90, 230, 210],
+        itemStyle:{
+          color: '#3766BE',
+          opacity:0
+        },
+        markLine: {
+          symbol: 'none',
+          lineStyle: {
+            width: 1,
+            type: 'solid'
+          },
+          data: [
+            {
+              name: "test", xAxis: 'Jan 09, 2023',
+              label: {
+                position: 'insideEndTop',
+                formatter: '{b}:{c}',
+                show: false
+              }
+            },
+            
+          ]
+        },
+
       },
       {
         name: '联盟广告',
@@ -74,9 +97,13 @@ export class OutboundTrendsComponent {
         data: [220, 182, 191, 234, 290, 330, 310],
         //https://apache.github.io/echarts-handbook/en/how-to/chart-types/line/basic-line/
         lineStyle: {
-          color: 'green',
+          color: '#757575',
           width: 1,
           type: 'dashed'
+        },
+        itemStyle:{
+          color:'red',
+          opacity:0
         }
       },
 
