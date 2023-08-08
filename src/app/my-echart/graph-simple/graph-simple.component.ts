@@ -74,9 +74,17 @@ export class GraphSimpleComponent {
     xAxis: {
       type: 'value',
       boundaryGap: [0, 0.01],
+      splitLine:{ show: false },
+      axisLine: { show: false },
+      axisTick: { show: false },
+      axisLabel: { show: false }
     },
     yAxis: {
       type: 'category',
+      splitLine:{ show: false },
+      axisLine: { show: false },
+      axisTick: { show: false },
+      axisLabel: { show: true },
       data: this.data.map((item) => item.name).reverse(),
     },
     series: [
