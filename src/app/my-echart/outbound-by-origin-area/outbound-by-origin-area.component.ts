@@ -5,9 +5,9 @@ import type { EChartsOption } from 'echarts';
 
 @Component({
   selector: 'app-graph-simple',
-  templateUrl: './graph-simple.component.html',
+  templateUrl: './outbound-by-origin-area.component.html',
 })
-export class GraphSimpleComponent {
+export class OutboundByOriginAreaComponent {
 
   seriesLabel = {
     normal: {

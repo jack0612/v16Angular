@@ -19,8 +19,10 @@ export class OutboundTrendsComponent {
         trigger: 'axis',
         showDelay: 0,
         axisPointer: {
+          type:"line",
+          axis:"x",
           crossStyle: {
-            type: 'solid'
+            type: 'dashed'
           }
         },
         transitionDuration: 0.2,
@@ -35,10 +37,6 @@ export class OutboundTrendsComponent {
         //   fontFamily: 'Roboto, sans-serif'
         // }
         // ,
-        // axisPointer: {
-        //   mainType: 'axisPointer'
-        //   type: 'line',
-        // }
       }
     ],
     xAxis: {
