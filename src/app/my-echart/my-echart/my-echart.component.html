@@ -1,4 +1,10 @@
 <mat-tab-group>
+  <mat-tab label="outboundTrends">
+    <ng-template matTabContent>
+      <app-outbound-trends></app-outbound-trends>
+    </ng-template>
+  </mat-tab>
+
   <mat-tab label="lineChart">
     <ng-template matTabContent>
       <line-chart></line-chart>
@@ -13,6 +19,12 @@
   <mat-tab label="bar">
     <ng-template matTabContent>
       <app-bar></app-bar>
+    </ng-template>
+  </mat-tab>
+
+  <mat-tab label="stakline">
+    <ng-template matTabContent>
+      <app-stack-line></app-stack-line>
     </ng-template>
   </mat-tab>
 
