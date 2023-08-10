@@ -4,19 +4,19 @@ import { LoggerService } from "../shared/service/logger.service";
  
 
 @Component({
-  standalone: true,
+  // standalone: true,
   selector: 'app-flight-booking',
-  imports: [
-    RouterOutlet,
-    RouterLink,
-  ],
+  // imports: [
+  //   RouterOutlet,
+  //   RouterLink,
+  // ],
   templateUrl: './flight-booking.component.html'
 })
 export class FlightBookingComponent {
-  logger = inject(LoggerService);
+  // logger = inject(LoggerService);
 
-  constructor() {
-    this.logger.info('booking', 'Hello from Booking');
-  }
+  // constructor() {
+  //   this.logger.info('booking', 'Hello from Booking');
+  // }
 
 }
