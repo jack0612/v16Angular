@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 //@import '~material-design-icons/iconfont/material-icons.css';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "./assets/styles/variables.scss";
+@import "./assets//styles/foundation.css";
 .content{
     height:400px;
     background:#eee;
@@ -54,4 +56,113 @@
     line-height: 24px;
     letter-spacing: 0em;
     text-align: right;
+}
+
+
+.mat-datepicker-popup {
+    width: 25rem;
+
+    //calendar width
+    .mat-datepicker-content .mat-calendar {
+        width: 400px;
+    }
+
+    .mat-calendar-content {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .mat-calendar-body-cell-content {
+        width: 100% !important;
+        height: 120% !important;
+        border-color: transparent;
+        border-width: 1px;
+        border-radius: 0px;
+        background-color: transparent;
+    }
+
+    .mat-calendar-body-cell-content button:hover {
+        border-width: 1px;
+        border-radius: 0px;
+        border-color: $blue-4;
+    }
+
+    .mat-calendar-body {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    button {
+
+        padding: 0px !important;
+    }
+
+    button:hover {
+
+        padding: 0px !important;
+        color: black;
+        border-radius: 0px !important;
+        border: none;
+        background-color: white;
+    }
+
+    button:focus {
+        background-color: transparent;
+        border-radius: 0px !important;
+        color: black;
+    }
+
+    table {
+
+        border: none;
+
+        th {
+            font-size: 16px !important;
+            line-height: 4.125rem;
+        }
+
+        /**
+            To remove the cal body label, cannot use display: none, because
+            it readjusts the numbers and starts from the beginning.
+            Using opacity 0, and setting the colspan=7 fixes this issue.
+        **/
+        .mat-calendar-body-label {
+            opacity: 0;
+        }
+
+        .mat-calendar-body-label[colspan="7"] {
+            display: none;
+        }
+
+        .mat-calendar-table-header-divider {
+            display: none;
+        }
+
+        .mat-calendar-body-cell-container {
+            // padding-bottom: 0px !important;
+            // margin: 0px !important;
+        }
+
+        .mat-calendar-body-today {
+            background-color: $blue-1 !important;
+            border: solid;
+            border-radius: 0px;
+        }
+
+        .mat-calendar-body-selected {
+            border: none;
+            border-radius: 0px;
+            background-color: $blue-4 !important;
+        }
+
+
+        thead {
+            background: none;
+        }
+
+        tr:nth-of-type(even) {
+            background: none;
+        }
+
+    }
 }

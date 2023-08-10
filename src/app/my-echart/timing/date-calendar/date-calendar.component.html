@@ -1,10 +1,5 @@
 <!-- https://stackblitz.com/angular/jxrdygrqknj?file=src%2Fapp%2Fdatepicker-custom-header-example.ts -->
-<div class="easyflow-padding-bottom-16">
-  <label>select Date</label>
-</div>
-<div class="easyflow-padding-bottom-16">Please note: changing the start date may affect your routes. Statutory holidays and weekends aren't available.</div>
-
-
+ 
 
 <div class="calendar-wrapper">
     <mat-form-field appearance="fill" floatLabel="always">
@@ -21,9 +16,5 @@
       (opened)="onOpen()" [dateClass]="dateClass" [ngStyle]="{'background-image':iconRepo.CALENDAR_STAT_BULLET}"></mat-datepicker>
     </mat-form-field>
 
-    <div class="oe-date-calendar-footer-container">
-      <div class="oe-date-calendar-footer" #datepickerFooter>
-              <img [src]="iconRepo.CALENDAR_STAT_BULLET" alt="Statutory Holiday" /><p>Statutory Holiday</p>
-      </div>
-    </div>
+
   </div>
