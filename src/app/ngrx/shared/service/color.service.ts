@@ -1,11 +1,13 @@
 import { inject, Injectable } from "@angular/core";
-import { ColorConfig } from "./color-config";
-import { LogLevel } from "./log-level";
+import { ColorConfig } from "../util-logger/color-config";
+import { LogLevel } from "../util-logger/log-level";
 
 export abstract class ColorService {
     abstract apply(level: LogLevel, msg: string): string;
 }
-
+@Injectable({
+    providedIn: 'root'
+  })
 @Injectable()
 export class DefaultColorService implements ColorService {
     config = inject(ColorConfig);

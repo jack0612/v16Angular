@@ -7,7 +7,7 @@ import {
   Type,
 } from '@angular/core';
 import { LoggerFeature, LoggerFeatureKind } from './features';
-import { LogAppender, LOG_APPENDERS } from './log-appender';
+import { LogAppender, LOG_APPENDERS } from '../service/log-appender.service';
 import { LOG_FORMATTER } from './log-formatter';
 import { LoggerService } from '../service/logger.service';
 import { defaultConfig, LoggerConfig } from './logger-config';

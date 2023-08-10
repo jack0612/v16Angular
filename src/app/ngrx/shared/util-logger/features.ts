@@ -1,6 +1,6 @@
 import { Provider } from "@angular/core";
 import { ColorConfig, defaultColorConfig } from "./color-config";
-import { ColorService, DefaultColorService } from "./color.service";
+import { ColorService, DefaultColorService } from "../service/color.service";
 
 export enum LoggerFeatureKind {
     COLOR,

@@ -36,7 +36,7 @@ const routes: Routes = [
     { path: 'designPattern', component: DesignPatternComponent },
     { path: 'signal', component: SignalComponent },
     { path: 'google-maps', component: MyGoogleMapsComponent },
-    { path: 'v16', component: NgrxV16Component },
+    { path: 'ngrxV16', component: NgrxV16Component },
     { path: 'NestedForm', component: NestedFormComponent },
 
     { path: 'AngularEvent', component: AngularEventComponent },

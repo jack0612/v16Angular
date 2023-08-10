@@ -1,12 +1,13 @@
 import { inject, Injectable, InjectionToken } from "@angular/core";
 import { ColorService } from "./color.service";
-import { LogLevel } from "./log-level";
+import { LogLevel } from "../util-logger/log-level";
 
 export abstract class LogAppender {
     abstract append(level: LogLevel, category: string, msg: string): void
 }
-
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+  })
 export class DefaultLogAppender implements LogAppender {
     colorService = inject(ColorService, { optional: true, self: true });  
     

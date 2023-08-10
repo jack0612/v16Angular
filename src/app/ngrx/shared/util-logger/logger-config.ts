@@ -1,5 +1,5 @@
 import { Type } from "@angular/core";
-import { DefaultLogAppender, LogAppender } from "./log-appender";
+import { DefaultLogAppender, LogAppender } from "../service/log-appender.service";
 import { defaultLogFormatFn, LogFormatFn } from "./log-formatter";
 import { LogLevel } from "./log-level";
 
