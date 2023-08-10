@@ -1,8 +1,9 @@
 import { CommonModule } from "@angular/common";
 import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, NgZone, Output, inject } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { CityPipe } from "../../shared/utility-common/city.pipe";
+ 
 import { Flight, initFlight } from "../model/flight";
+import { CityPipe } from "../shared/utility-common/city.pipe";
 
 @Component({
   standalone: true,

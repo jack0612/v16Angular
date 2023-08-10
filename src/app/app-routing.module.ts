@@ -28,7 +28,8 @@ import { MyGoogleMapsComponent } from './google-maps/google-maps.component';
 import { MyTypescriptComponent } from './my-typescript/my-typescript.component';
 import { AngularElementsComponent } from './angular-elements/angular-elements.component'
 import { MyEchartComponent } from './my-echart/my-echart/my-echart.component';
-import { NgrxV16Component } from './ngrx/ngrx-v16/ngrx-v16.component';
+import { NgrxV16Component } from './ngrx-v16/ngrx-v16.component';
+ 
 
 const routes: Routes = [
     { path: 'app-flex', component: FlexComponent },

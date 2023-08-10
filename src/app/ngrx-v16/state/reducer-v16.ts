@@ -1,7 +1,8 @@
 import { MemoizedSelector, createFeature, createReducer, createSelector, on } from "@ngrx/store";
 import { Flight } from "../model/flight";
-import { addMinutes } from "../../shared/utility-common/date-util";
+ 
 import { ticketingActions } from "./action-v16";
+import { addMinutes } from "../shared/utility-common/date-util";
 
 export interface BookingState {
     flights: Flight[];

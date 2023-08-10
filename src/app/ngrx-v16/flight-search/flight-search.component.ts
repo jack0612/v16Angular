@@ -1,12 +1,13 @@
 import { AsyncPipe, JsonPipe, NgForOf, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CityValidator } from '../../shared/utility-common/city.validator';
+ 
 import { FlightCardComponent } from '../flight-card/flight-card.component';
 import { ChangeDetectionStrategy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ticketingFeature } from '../state/reducer-v16';
 import { ticketingActions } from '../state/action-v16';
+import { CityValidator } from '../shared/utility-common/city.validator';
 
 @Component({
   standalone: true,
