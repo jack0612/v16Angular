@@ -1,6 +1,6 @@
 export class AppIconRepo {
-    private static readonly ASSETS_BASE_DIR = '/smmselfserv/assets';
-    private static readonly ICONS_BASE_DIR = AppIconRepo.ASSETS_BASE_DIR + '/icons';
+    private static readonly ASSETS_BASE_DIR = '../../../../assets';
+    private static readonly ICONS_BASE_DIR = AppIconRepo.ASSETS_BASE_DIR + '/images';
     static readonly BACK_ICON = AppIconRepo.ICONS_BASE_DIR + '/Blue_back.svg';
     static readonly GUIDE_ICON = AppIconRepo.ICONS_BASE_DIR + '/GuideIcon_Blue.svg';
     static readonly EDIT_ICON = AppIconRepo.ICONS_BASE_DIR + '/Edit.svg';

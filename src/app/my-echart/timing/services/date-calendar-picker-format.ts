@@ -15,7 +15,9 @@ export const PICK_FORMATS = {
   }
 };
 
-@Injectable()
+@Injectable({
+  providedIn:'root'
+})
 export class PickerDateAdapter extends NativeDateAdapter {
   public static INVALID_DATE = "Invalid Date";
 
