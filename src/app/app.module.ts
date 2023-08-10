@@ -104,7 +104,7 @@ import { CvaSelectComponent } from './custom-control/resettable-input/cva-select
 import { CvaRadioGroupComponent} from './custom-control/resettable-input/cva-radio-group.component';
 import { ResettableInputParentComponent } from './custom-control/resettable-input/resettable-input-parent/resettable-input-parent.component';
 import {MyEchartModule } from './my-echart/my-echart.module'
-import { NgrxV16Module } from './ngrx-v16/ngrx-v16.module';
+import { NgrxV16Component } from './ngrx-v16/ngrx-v16.component';
  
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json?v=' + new Date().getTime());
@@ -259,7 +259,7 @@ export const CustomBreakPointsProvider = {
     DynamicRoutingModule,
     MyEchartModule,
     
-    NgrxV16Module
+    NgrxV16Component
 
 
 

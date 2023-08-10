@@ -4,12 +4,13 @@ import { LoggerService } from "../shared/service/logger.service";
  
 
 @Component({
-  // standalone: true,
+  standalone: true,
+  imports: [
+    RouterOutlet,
+    RouterLink,
+  ],
   selector: 'app-flight-booking',
-  // imports: [
-  //   RouterOutlet,
-  //   RouterLink,
-  // ],
+
   templateUrl: './flight-booking.component.html'
 })
 export class FlightBookingComponent {
