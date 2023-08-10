@@ -1,0 +1,22 @@
+<div fxLayout="column" class="oe-timing-container">
+    <form [formGroup]="deliveryTimingFormGroup">
+  
+
+  
+      <div>
+        <app-date-calendar (setValidDate)="setValidDate($event)" (setPeriod)="setPeriod($event)" (setDropOffBetween)="setDropOffBetween($event)" [campaignStartSelection]="campaignStartSelection"></app-date-calendar>
+      </div>
+
+  
+        <!-- confirm button -->
+        <div class="easyflow-margin-top-32">
+          <button id="confirmButton" mat-flat-button class="primary-button by-keyboard" (click)="validateFormAndSave($event);">CONFIRM</button>
+        </div>
+  
+    
+  
+    </form>
+  </div>
+  
+  
+  

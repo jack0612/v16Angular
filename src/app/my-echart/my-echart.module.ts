@@ -10,11 +10,20 @@ import { OutboundByOriginAreaComponent } from './outbound-by-origin-area/outboun
 import { BarComponent } from '../my-echart/bar/bar.component';
  
 import { StackLineComponent } from './stack-line/stack-line.component';
-import { OutboundTrendsComponent } from './outbound-trends/outbound-trends.component'
+import { OutboundTrendsComponent } from './outbound-trends/outbound-trends.component';
+import { TimingComponent } from './timing/timing.component'
+import { DateCalendarHeaderComponent } from './timing/date-calendar-header/date-calendar-header.component';
+import { DateCalendarComponent } from './timing/date-calendar/date-calendar.component';
+ 
+ 
 
 
 @NgModule({
-  declarations: [LineChartComponent, MyEchartComponent, OutboundByOriginAreaComponent, BarComponent, StackLineComponent, OutboundTrendsComponent],
+  declarations: [LineChartComponent, MyEchartComponent, OutboundByOriginAreaComponent, BarComponent, 
+    StackLineComponent, OutboundTrendsComponent, TimingComponent,
+    DateCalendarComponent,
+    DateCalendarHeaderComponent,
+  ],
   imports: [
     CommonModule,
     BrowserModule,
@@ -23,7 +32,8 @@ import { OutboundTrendsComponent } from './outbound-trends/outbound-trends.compo
     MaterialModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
-    })
+    }),
+
   ],
   exports: [
     LineChartComponent, MyEchartComponent

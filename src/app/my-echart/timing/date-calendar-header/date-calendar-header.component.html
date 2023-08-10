@@ -1,0 +1,19 @@
+<div class="oe-date-calendar-header-close">
+    <div><button mat-icon-button (click)="closeClicked()">
+        <mat-icon>close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="oe-date-calendar-header-navigation">
+    <div>
+        <button mat-icon-button (click)="previousClicked('month')">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+    </div>
+    <div>{{periodLabel}}</div>
+    <div>
+        <button mat-icon-button (click)="nextClicked('month')">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+    </div>
+</div>

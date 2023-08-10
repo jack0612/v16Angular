@@ -1,0 +1,142 @@
+$icons: "/smmselfserv/assets/icons";
+@import "../../../../assets/styles/variables.scss";
+
+
+button.oe-date-calendar-weekend {
+
+    .mat-calendar-body-cell-content {
+        text-decoration: line-through;
+        border-radius: 0px;
+    }
+    .mat-calendar-body-cell-content:hover {
+        // text-decoration: line-through;
+        border-radius: 0px;
+        border: $blue-4 solid;
+        background-color: white;
+    }
+}
+
+button.oe-date-calendar-holidays {
+
+    .mat-calendar-body-cell-content {
+        text-decoration: line-through;
+    }
+    background: url($icons+"/circle_rounded_icon.svg") bottom left 25.5px / contain no-repeat;
+    background-size: 6px;
+}
+
+button.oe-date-calendar-out-of-range {
+
+    .mat-calendar-body-cell-content {
+        text-decoration: line-through;
+        // background-color: pink;
+        border-radius: 0px;
+    }
+
+    .mat-calendar-body-cell-content:hover {
+        // text-decoration: line-through;
+        border-radius: 0px;
+        border: $blue-4 solid;
+        background-color: white;
+    }
+}
+
+button.oe-date-calendar-selectable {
+
+    .mat-calendar-body-cell-content {
+
+        background-color: $blue-1;
+        border-radius: 0px;
+    }
+    .mat-calendar-body-cell-content:hover {
+
+        border: $blue-4 solid;
+    }
+}
+
+.calendar-wrapper {
+    
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    width: 173px;
+    
+    .mat-form-field-appearance-fill .mat-form-field-infix{
+        padding-bottom: 0;
+    }
+      
+    mat-form-field {
+        color: red !important;
+        padding-left: 0px !important;
+        padding-bottom: 0px !important;
+        margin-bottom:0px;
+    }
+    
+    .mat-input-element { //works as updates below
+
+        padding: 0px !important;
+        height: 44px !important;
+        margin-left: 0px;
+        vertical-align: super;
+        padding-right: 30px !important;
+        padding-left: 10px !important;
+    }
+
+    //Change the calendar icon inside input
+    .button {
+        background-color: transparent !important;
+    }
+}
+
+::ng-deep .mat-calendar-body-cell-content{
+    position: absolute;
+    line-height: 1;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0px !important;
+}
+
+.oe-date-calendar-footer-container {
+    display:none;
+
+}
+.oe-date-calendar-footer {
+    width: 100%;
+    padding: 0 1.125rem 1.125rem 1.125rem;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: left;
+    
+    img {
+        padding-bottom: 15px !important;
+        margin-right: 15px !important;
+        margin-left: 5px !important;
+    }
+}
+
+label.calendar {
+    position: relative;
+}
+  
+label.calendar:before {
+    content: "";
+    position: absolute;
+    right: 24px;
+    top: 10px;
+    bottom: 0;
+    width: 20px;
+    background: url($icons + "/calendar_default.svg") center / contain no-repeat;
+}
+
+label.calendar input {
+    padding: 10px 10px;
+    width: 175px;
+    margin-top: 5px;
+}
+label.calendar input::placeholder {
+    font-style:normal;
+    font-weight: 300;
+}
+
+
+

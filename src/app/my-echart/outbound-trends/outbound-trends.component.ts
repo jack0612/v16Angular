@@ -29,7 +29,7 @@ export class OutboundTrendsComponent {
         formatter: function (params) {
           console.log('line-chart:params', params)
           return `
-          <div>${params[0]['axisValue']} : <span class="echarts-tooltip-value"> ${params[0]['data']}</span></div>
+          <div>${params[0]['axisValue']} : <span class="echarts-tooltip-value"> ${params[0]['value']}</span></div>
         `;
         },
         // textStyle: {
@@ -65,11 +65,50 @@ export class OutboundTrendsComponent {
         name: 'sales',
         type: 'line',
         stack: 'total',
-        data: [120, 132, 101, 134, 90, 230, 210],
-        itemStyle:{
-          color: '#3766BE',
-          opacity:0
-        },
+        data: [
+          {
+            value: 120, itemStyle: {
+              color: '#3766BE',
+              opacity: 0
+            }
+          },
+          {
+            value: 132, itemStyle: {
+              color: '#3766BE',
+              opacity: 0
+            }
+          },
+          {
+            value: 101, itemStyle: {
+              color: '#3766BE',
+              opacity: 0
+            }
+          },
+          {
+            value: 134, itemStyle: {
+              color: '#3766BE',
+              opacity: 0
+            }
+          },
+          {
+            value: 90, itemStyle: {
+              color: '#3766BE',
+              opacity: 0
+            }
+          },
+          {
+            value: 230, itemStyle: {
+              color: '#3766BE',
+              opacity: 0
+            }
+          },
+          {
+            value: 210, itemStyle: {
+              color: '#3766BE',
+              opacity: 1
+            }
+          }
+        ],
         markLine: {
           symbol: 'none',
           lineStyle: {
@@ -79,31 +118,77 @@ export class OutboundTrendsComponent {
           data: [
             {
               name: "test", xAxis: 'Jan 09, 2023',
+              itemStyle: {
+                color: '#3766BE',
+              },
               label: {
                 position: 'insideEndTop',
                 formatter: '{b}:{c}',
                 show: false
               }
             },
-            
+
           ]
         },
 
       },
       {
-        name: '联盟广告',
+        name: 'second line',
         type: 'line',
-        stack: '总量',
-        data: [220, 182, 191, 234, 290, 330, 310],
+        stack: 'total',
+        data: [
+          {
+            value: 220, itemStyle: {
+              color: '#3766BE',
+              opacity: 0
+            }
+          },
+          {
+            value: 182, itemStyle: {
+              color: '#3766BE',
+              opacity: 0
+            }
+          },
+          {
+            value: 191, itemStyle: {
+              color: '#3766BE',
+              opacity: 0
+            }
+          },
+          {
+            value: 234, itemStyle: {
+              color: '#3766BE',
+              opacity: 0
+            }
+          },
+          {
+            value: 290, itemStyle: {
+              color: '#3766BE',
+              opacity: 0
+            }
+          },
+          {
+            value: 330, itemStyle: {
+              color: '#3766BE',
+              opacity: 0
+            }
+          },
+          {
+            value: 310, itemStyle: {
+              color: '#3766BE',
+              opacity: 1
+            }
+          }
+        ],
         //https://apache.github.io/echarts-handbook/en/how-to/chart-types/line/basic-line/
         lineStyle: {
           color: '#757575',
           width: 1,
           type: 'dashed'
         },
-        itemStyle:{
-          color:'red',
-          opacity:0
+        itemStyle: {
+          color: 'red',
+          opacity: 0
         }
       },
 
