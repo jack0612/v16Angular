@@ -1,6 +1,7 @@
 import { FormControl, FormGroup } from "@angular/forms";
 import { GlobalConstants } from "../constants/global-constants";
 import { TranslateService } from "@ngx-translate/core";
+import { DecimalPipe } from "@angular/common";
 
 
 export class AppUtil {
@@ -78,5 +79,10 @@ export class AppUtil {
     (typeof obj === "function" || (typeof obj === "object" && !!obj)) &&
     Array.isArray(obj) === false &&
     !(obj instanceof Date);
+
+   static transfromDecimalPipe(pipe: DecimalPipe, value:number, format:string):string{
+      return pipe.transform(value,format);
+
+    }
 
 }

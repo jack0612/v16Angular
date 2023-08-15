@@ -36,4 +36,5 @@ export class AppIconRepo {
     static readonly CONFIRMATION_ICON = AppIconRepo.ICONS_BASE_DIR + '/confirmation-icon.svg';
     static readonly ALERT_WARNING_ICON = AppIconRepo.ICONS_BASE_DIR + '/alert-warning-icon.svg';
     
+    static readonly DWON_RIGHT_ARROW_ICON = AppIconRepo.ICONS_BASE_DIR + '/down-right-arrow-icon.svg';
 }

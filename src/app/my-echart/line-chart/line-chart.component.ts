@@ -7,7 +7,7 @@ import type { EChartsOption } from 'echarts';
 @Component({
   selector: 'line-chart',
   template: `
-  <div echarts [options]="chartOption"  class="demo-chart"></div>
+  <div echarts [options]="chartOption" aria-label="this is a"  class="demo-chart"></div>
 `,
 
 })
@@ -16,6 +16,9 @@ export class LineChartComponent {
 
 
   chartOption: EChartsOption = {
+    aria: {
+      enabled:true
+    },
     textStyle: {
       fontFamily: 'Roboto, Arial, Verdana, sans-serif',
       fontSize: 24

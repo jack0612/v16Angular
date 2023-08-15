@@ -3,9 +3,11 @@ import { LogAppender, LOG_APPENDERS } from './log-appender.service';
 import { LOG_FORMATTER } from '../util-logger/log-formatter';
 import { LogLevel } from '../util-logger/log-level';
 import { LoggerConfig } from '../util-logger/logger-config';
-@Injectable({
+@Injectable(
+  {
   providedIn: 'root'
-})
+}
+)
 export class LoggerService {
   private appenders = inject(LOG_APPENDERS);
   private formatter = inject(LOG_FORMATTER);

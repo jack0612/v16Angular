@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DecimalPipe } from '@angular/common';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { MyEchartComponent } from './my-echart/my-echart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -34,6 +34,9 @@ import { DateCalendarComponent } from './timing/date-calendar/date-calendar.comp
       echarts: () => import('echarts')
     }),
 
+  ],
+  providers:[
+    DecimalPipe 
   ],
   exports: [
     LineChartComponent, MyEchartComponent

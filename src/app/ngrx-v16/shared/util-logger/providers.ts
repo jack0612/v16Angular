@@ -25,6 +25,7 @@ export function provideLogger(
     throw new Error('Only one color feature allowed for logger!');
   }
 
+  //https://netbasal.com/how-to-keep-your-angular-providers-from-ending-up-in-the-wrong-injector-151bd095ff0d
   return makeEnvironmentProviders([
     LoggerService,
     {
