@@ -1,0 +1,55 @@
+.dp__one-delivery {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 16px;
+}
+
+.dp__type {
+    font-weight: 400;
+    color: #0467C6;
+}
+
+.dp__description {
+    font-weight: 500;
+    color: #434343;
+}
+
+
+.dilivery-performance {
+    display: flex;
+    .mdc-linear-progress__bar, .mdc-linear-progress, .mdc-linear-progress__buffer{
+        height: 8px;
+    }
+    .mdc-linear-progress__bar-inner {
+        border-color: red;
+        border-top-width: 8px;
+    }
+    .mat-mdc-progress-bar .mdc-linear-progress__buffer-bar {
+        background-color: #F2F2F2
+    }
+
+    .bar-begin {
+        width:14px;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+    }
+
+    .bar-body {
+        width: 300px;;
+    }
+
+    .bar-end {
+        width:14px;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+    }
+
+    .bar-empty {
+        width:cal( 100% - 316);
+    }
+}
+ 
+ 
+ 
