@@ -20,8 +20,8 @@ export class OutboundTrendsComponent {
   }
 
 
-  private line1RawData = [820, 1132, 1300, 900, 1400, 800, 1100, 1000, 600, 800, 1000, 1200];
-  private line2RawData = [920, 1032, 1100, 1900, 900, 700, 1300, 1100, 1600, 1800, 1200, 1300];
+  private line1RawData = [820, 1132, 1300, 900, 1400, 800, 1100];
+  private line2RawData = [920, 1032, 1100, 1900, 900, 700, 1300,];
   private line1Data: any[] = [];
   private line2Data: any[] = [];
   private line1FormattedData: any[] = [];
@@ -29,26 +29,33 @@ export class OutboundTrendsComponent {
   private description = "8%";
 
   ngOnInit() {
-    this.line1RawData.forEach(item => {
+    this.line1RawData.forEach((item,index) => {
       this.line1Data.push(
         {
           value: item,
           itemStyle: {
             color: '#3766BE',
-            opacity: 0
+            opacity: (index==this.line1RawData.length-1) ? 1: 0,
+            borderWidth: 100,
+            borderType:'solid',
+            decal:{
+
+            }
           }
         }
       );
       this.line1FormattedData.push(AppUtil.transfromDecimalPipe(this.decimalPipe, item, '1.0-0'));
     }
     );
-    this.line2RawData.forEach(item => {
+    this.line2RawData.forEach((item, index) => {
+      console.log(index,this.line2RawData.length-1)
       this.line2Data.push(
         {
           value: item,
           itemStyle: {
-            color: '#3766BE',
-            opacity: 0
+            color: '#757575',
+            opacity: (index==this.line2RawData.length-1) ? 1: 0,
+            borderWidth: 3
           }
         },
       );
@@ -143,6 +150,8 @@ export class OutboundTrendsComponent {
       {
         name: 'sales',
         type: 'line',
+        symbol:'circle',  //the connector
+        symbolSize: 10 ,
         stack: 'total',
         data: this.line1Data,
         markLine: {
@@ -171,7 +180,9 @@ export class OutboundTrendsComponent {
       {
         name: 'second line',
         type: 'line',
-        stack: 'total',
+        stack: 'total',   
+        symbol:'image://../../../assets/images/circle-outbound-trends-connector.svg',  //https://echarts.apache.org/en/option.html#series-line.symbolSize
+        symbolSize: 10 ,
         data: this.line2Data,
         //https://apache.github.io/echarts-handbook/en/how-to/chart-types/line/basic-line/
         lineStyle: {

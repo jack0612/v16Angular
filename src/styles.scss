@@ -59,68 +59,6 @@ input[type="text"].ship-ui-error {
 }
 
 
-.echarts-tooltip {
-    padding: 8px;
-
-    .title {
-        margin-bottom: 8px;
-    }
-
-    .one-row {
-        display: flex;
-        align-items: center;
-        margin-bottom: 8px;
-    }
-
-    .empty-circle {
-        border-radius: 50%;
-        height: 8px;
-        width: 8px;
-        margin-right: 8px;
-        border: 2px solid #757575;
-    }
-
-    .solid-circle {
-        border-radius: 50%;
-        height: 8px;
-        width: 8px;
-        margin-right: 8px;
-        border: 1px solid #3766BE;
-        background-color: #3766BE;
-    }
-
-    .text {
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 20px;
-    }
-
-    .value {
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 24px;
-        letter-spacing: 0em;
-        margin-left: auto;
-    }
-
-    img {
-        color: #098A00;
-    }
-    
-    .description-percent {
-        color: #098A00;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 20px;
-    }
-
-    .description-text {
-        color: #757575;
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 16px;
-    }
-}
 
 
 
