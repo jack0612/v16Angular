@@ -10,22 +10,14 @@ import { DomSanitizer } from '@angular/platform-browser';
   selector: 'app-outbound-trends',
   templateUrl: './outbound-trends.component.html',
   styleUrls: ['./outbound-trends.component.scss'],
-  //encapsulation:ViewEncapsulation.ShadowDom
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class OutboundTrendsComponent {
   constructor(
     private decimalPipe: DecimalPipe,
-    private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer) { 
-      this.matIconRegistry.addSvgIcon(
-        'date_calendar_icon',
-        this.domSanitizer.bypassSecurityTrustResourceUrl(AppIconRepo.CALENDAR_DEFAULT)
-      );
-      this.matIconRegistry.addSvgIcon(
-        this.downRightArrowIcon,
-        this.domSanitizer.bypassSecurityTrustResourceUrl(this.downRightArrowIconSrc)
-      );
-    }
+  ) {
+
+  }
 
 
   private line1RawData = [820, 1132, 1300, 900, 1400, 800, 1100, 1000, 600, 800, 1000, 1200];
@@ -35,12 +27,8 @@ export class OutboundTrendsComponent {
   private line1FormattedData: any[] = [];
   private line2FormattedData: any[] = [];
   private description = "8%";
-  downRightArrowIconSrc = AppIconRepo.DWON_RIGHT_ARROW_ICON;
-  downRightArrowIcon="down-right-arrow";
-  toggleIcon: string = 'date_calendar_icon';
 
   ngOnInit() {
-
     this.line1RawData.forEach(item => {
       this.line1Data.push(
         {
@@ -67,7 +55,6 @@ export class OutboundTrendsComponent {
       this.line2FormattedData.push(AppUtil.transfromDecimalPipe(this.decimalPipe, item, '1.0-0'));
     });
   }
-
 
   options: EChartsOption = {
     aria: {
@@ -117,7 +104,7 @@ export class OutboundTrendsComponent {
               <span class="value"> ${this.line2FormattedData[params[1].dataIndex]}</span>
             </div>
             <div class="one-row">
-              <mat-icon svgIcon="{{toggleIcon}}"></mat-icon>
+              <img width="16" src="../../../assets/images/down-right-arrow.svg">&nbsp;
               <span class="description-percent">${this.description} &nbsp;</span>
               <span class="description-text">in selected period.<span>
             </div>
