@@ -71,6 +71,14 @@ export class OutboundTrendsComponent {
     return descriptionImageSource;
   }
 
+  private getDescriptionPercent(line1Value: number, line2Value: number): string {
+   
+ 
+    const descriptionPercent = ((
+      Math.abs(line1Value-line2Value)*100)/line2Value).toFixed(0)+'%';
+    return descriptionPercent;
+  }
+
   options: EChartsOption = {
     aria: {
       enabled: true,
@@ -118,9 +126,10 @@ export class OutboundTrendsComponent {
               <span class="text">${params[1]['axisValue']}  &nbsp;</span>
               <span class="value"> ${this.line2FormattedData[params[1].dataIndex]}</span>
             </div>
+            <hr>
             <div class="one-row">
               <img width="16" src=${this.getDescriptionImageSource(params[0].data.value, params[1].data.value)}>&nbsp;
-              <span class="description-percent">${this.description} &nbsp;</span>
+              <span class="description-percent">${this.getDescriptionPercent(params[0].data.value, params[1].data.value)} &nbsp;</span>
               <span class="description-text">in selected period<span>
             </div>
           </div>
@@ -156,11 +165,10 @@ export class OutboundTrendsComponent {
     },
     series: [
       {
-        name: 'sales',
+        name: 'first line',
         type: 'line',
         symbol: 'circle',  //the connector
         symbolSize: 10,
-        stack: 'total',
         data: this.line1Data,
         markLine: {
           symbol: 'none',
@@ -189,7 +197,6 @@ export class OutboundTrendsComponent {
       {
         name: 'second line',
         type: 'line',
-        stack: 'total',
         symbol: 'image://../../../assets/images/circle-outbound-trends-connector.svg',  //https://echarts.apache.org/en/option.html#series-line.symbolSize
         symbolSize: 10,
         data: this.line2Data,
