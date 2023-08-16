@@ -158,7 +158,8 @@ export class OutboundTrendsComponent {
           symbol: 'none',
           lineStyle: {
             width: 1,
-            type: 'solid'
+            type: 'solid',
+            color: '#434343'
           },
           data: [
             {
