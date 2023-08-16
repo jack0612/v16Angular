@@ -9,7 +9,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
-
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -43,7 +43,7 @@ const MatModules = [
     MatTableModule,
     MatSortModule,
     MatFormFieldModule,
-
+    MatProgressBarModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MomentDateModule,

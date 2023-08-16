@@ -126,8 +126,8 @@ export class OutboundTrendsComponent {
               <span class="text">${params[1]['axisValue']}  &nbsp;</span>
               <span class="value"> ${this.line2FormattedData[params[1].dataIndex]}</span>
             </div>
-            <hr>
-            <div class="one-row">
+            <hr class="i360-margin-bottom-8">
+            <div class="one-row ">
               <img width="16" src=${this.getDescriptionImageSource(params[0].data.value, params[1].data.value)}>&nbsp;
               <span class="description-percent">${this.getDescriptionPercent(params[0].data.value, params[1].data.value)} &nbsp;</span>
               <span class="description-text">in selected period<span>

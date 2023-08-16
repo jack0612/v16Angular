@@ -14,6 +14,7 @@ import { OutboundTrendsComponent } from './outbound-trends/outbound-trends.compo
 import { TimingComponent } from './timing/timing.component'
 import { DateCalendarHeaderComponent } from './timing/date-calendar-header/date-calendar-header.component';
 import { DateCalendarComponent } from './timing/date-calendar/date-calendar.component';
+import { DeliveryPerformanceComponent } from './delivery-performance/delivery-performance.component';
  
  
 
@@ -23,6 +24,7 @@ import { DateCalendarComponent } from './timing/date-calendar/date-calendar.comp
     StackLineComponent, OutboundTrendsComponent, TimingComponent,
     DateCalendarComponent,
     DateCalendarHeaderComponent,
+    DeliveryPerformanceComponent,
   ],
   imports: [
     CommonModule,
