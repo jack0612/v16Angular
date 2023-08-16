@@ -2,10 +2,8 @@ import { DecimalPipe } from '@angular/common';
 import { Component, ViewEncapsulation } from '@angular/core';
 import { EChartsOption } from 'echarts';
 import { AppUtil } from 'src/app/snap-ship/utils/app-util';
-import { AppIconRepo } from '../timing/models/app-icon-repo';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
 
+//https://www.benmvp.com/blog/nested-string-interpolation-in-javascript/
 @Component({
   selector: 'app-outbound-trends',
   templateUrl: './outbound-trends.component.html',
@@ -27,18 +25,19 @@ export class OutboundTrendsComponent {
   private line1FormattedData: any[] = [];
   private line2FormattedData: any[] = [];
   private description = "8%";
+ 
 
   ngOnInit() {
-    this.line1RawData.forEach((item,index) => {
+    this.line1RawData.forEach((item, index) => {
       this.line1Data.push(
         {
           value: item,
           itemStyle: {
             color: '#3766BE',
-            opacity: (index==this.line1RawData.length-1) ? 1: 0,
+            opacity: (index == this.line1RawData.length - 1) ? 1 : 0,
             borderWidth: 100,
-            borderType:'solid',
-            decal:{
+            borderType: 'solid',
+            decal: {
 
             }
           }
@@ -48,19 +47,28 @@ export class OutboundTrendsComponent {
     }
     );
     this.line2RawData.forEach((item, index) => {
-      console.log(index,this.line2RawData.length-1)
+      console.log(index, this.line2RawData.length - 1)
       this.line2Data.push(
         {
           value: item,
           itemStyle: {
             color: '#757575',
-            opacity: (index==this.line2RawData.length-1) ? 1: 0,
+            opacity: (index == this.line2RawData.length - 1) ? 1 : 0,
             borderWidth: 3
           }
         },
       );
       this.line2FormattedData.push(AppUtil.transfromDecimalPipe(this.decimalPipe, item, '1.0-0'));
     });
+  }
+
+//https://www.benmvp.com/blog/nested-string-interpolation-in-javascript/
+  private getDescriptionImageSource(line1Value: number, line2Value: number): string {
+    const downRightArrowSvg = '../../../assets/images/down-right-arrow.svg';
+    const upRightArrowSvg = '../../../assets/images/up-right-arrow.svg';
+    let isDown = line1Value > line2Value;
+    const descriptionImageSource = isDown ? downRightArrowSvg : upRightArrowSvg;
+    return descriptionImageSource;
   }
 
   options: EChartsOption = {
@@ -111,9 +119,9 @@ export class OutboundTrendsComponent {
               <span class="value"> ${this.line2FormattedData[params[1].dataIndex]}</span>
             </div>
             <div class="one-row">
-              <img width="16" src="../../../assets/images/down-right-arrow.svg">&nbsp;
+              <img width="16" src=${this.getDescriptionImageSource(params[0].data.value, params[1].data.value)}>&nbsp;
               <span class="description-percent">${this.description} &nbsp;</span>
-              <span class="description-text">in selected period.<span>
+              <span class="description-text">in selected period<span>
             </div>
           </div>
           `;
@@ -150,8 +158,8 @@ export class OutboundTrendsComponent {
       {
         name: 'sales',
         type: 'line',
-        symbol:'circle',  //the connector
-        symbolSize: 10 ,
+        symbol: 'circle',  //the connector
+        symbolSize: 10,
         stack: 'total',
         data: this.line1Data,
         markLine: {
@@ -181,9 +189,9 @@ export class OutboundTrendsComponent {
       {
         name: 'second line',
         type: 'line',
-        stack: 'total',   
-        symbol:'image://../../../assets/images/circle-outbound-trends-connector.svg',  //https://echarts.apache.org/en/option.html#series-line.symbolSize
-        symbolSize: 10 ,
+        stack: 'total',
+        symbol: 'image://../../../assets/images/circle-outbound-trends-connector.svg',  //https://echarts.apache.org/en/option.html#series-line.symbolSize
+        symbolSize: 10,
         data: this.line2Data,
         //https://apache.github.io/echarts-handbook/en/how-to/chart-types/line/basic-line/
         lineStyle: {
