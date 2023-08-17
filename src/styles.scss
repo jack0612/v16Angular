@@ -2,8 +2,9 @@
 //@import '~material-design-icons/iconfont/material-icons.css';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "./assets/styles/variables.scss";
-@import "./assets//styles/foundation.css";
-
+@import "./assets/styles/foundation.css";
+@import "./assets/material-override.scss";
+@import "./assets/i360-styles.scss";
 @font-face {
 	font-family: 'CanadianaTextWEB';
 	src: url("./assets/font/CanadianaTextWEB-Regular.otf") format("opentype");
@@ -184,33 +185,10 @@ input[type="text"].ship-ui-error {
     
 }
 
-.i360-margin-bottom-4 {
-    margin-bottom: 4px;
-}
 
-.i360-margin-bottom-8 {
-    margin-bottom: 0.5rem;
-}
 
-.i360-margin-bottom-12 {
-    margin-bottom: 0.75rem;
-}
 
-.i360-margin-bottom-16 {
-    margin-bottom: 1rem;
-}
-.i360-margin-bottom-24 {
-    margin-bottom: 1.5rem;
-}
 
-.i360-margin-bottom-32 {
-    margin-bottom: 2rem;
-}
 
-.i360-margin-bottom-56 {
-    margin-bottom: 3.5rem;
-}
-
-.i360-margin-bottom-64 {
-    margin-bottom: 4rem;
-}
+ 
+ 

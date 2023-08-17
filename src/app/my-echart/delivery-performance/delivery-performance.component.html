@@ -1,14 +1,19 @@
 <div class="dilivery-performance">
-    <!-- <div>Overall delivery breakdown</div> -->
-    <!-- <ng-container *ngFor="let dp of deliveryPerformances"> -->
-        <!-- <div class="dp__one-delivery">
+    <div>Overall delivery breakdown</div>
+    <div *ngFor="let dp of deliveryPerformances; let index = index">
+        <div class="dp__one-delivery">
             <div class="dp__type">{{dp.type}}</div>
             <div class="dp__description">{{dp.description}}</div>
-        </div> -->
-        <!-- <mat-progress-bar mode="determinate" value="{{dp.percent}}" color="{{dp.color}}"></mat-progress-bar> -->
-    <!-- </ng-container> -->
-    <mat-progress-bar class="bar-begin" mode="determinate" value="100"  ></mat-progress-bar>
-    <mat-progress-bar class="bar-body" mode="determinate" value="100"  ></mat-progress-bar>
-    <mat-progress-bar class="bar-end"  mode="determinate" value="100"  ></mat-progress-bar>
-    <mat-progress-bar class="bar-empty"  mode="determinate" value="0"  ></mat-progress-bar>
+        </div>
+        <div class="dp__bar dp__bar{{index}}">
+            <mat-progress-bar class="bar-begin" mode="determinate" value="100"></mat-progress-bar>
+            <mat-progress-bar class="bar-body" mode="determinate" value="100"></mat-progress-bar>
+            <mat-progress-bar class="bar-end" mode="determinate" value="100"></mat-progress-bar>
+            <mat-progress-bar class="bar-empty" mode="determinate" value="0"></mat-progress-bar>
+        </div>
+    </div>
+    <p class="dp__note i360-margin-top-32">
+        *The On-Time Delivery Guarantee does not apply to Regular Parcel
+    </p>
+
 </div>

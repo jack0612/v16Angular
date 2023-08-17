@@ -1,0 +1,55 @@
+.dp__bar {
+    display: flex;
+
+    .mdc-linear-progress__bar,
+    .mdc-linear-progress,
+    .mdc-linear-progress__buffer {
+        height: 8px;
+    }
+
+    .mdc-linear-progress__bar-inner {
+
+        border-top-width: 8px;
+    }
+
+    &.dp__bar0 .mdc-linear-progress__bar-inner {
+        border-color: #3B796C;
+    }
+
+    &.dp__bar1 .mdc-linear-progress__bar-inner {
+        border-color: #3B796C;
+    }
+
+    &.dp__bar2 .mdc-linear-progress__bar-inner {
+        border-color: #B6875E
+    }
+
+    &.dp__bar3 .mdc-linear-progress__bar-inner {
+        border-color: #B6875E
+    }
+
+    .mat-mdc-progress-bar .mdc-linear-progress__buffer-bar {
+        background-color: #F2F2F2
+    }
+
+    .bar-begin {
+        width: 8px;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+    }
+
+    .bar-body {
+        width: 300px;
+        ;
+    }
+
+    .bar-end {
+        width: 8px;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+    }
+
+    .bar-empty {
+        width: cal(100% - 316);
+    }
+}

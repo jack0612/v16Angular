@@ -5,6 +5,8 @@ export class DeliveryPerformance {
     description: string;
     color: string;
 
+    
+
     static getDeliveryPerformance():DeliveryPerformance[]{
         const deliveryPerformances:DeliveryPerformance[]=[
             {
@@ -40,4 +42,6 @@ export class DeliveryPerformance {
         ];
         return deliveryPerformances;
     }
+
+  
 }
