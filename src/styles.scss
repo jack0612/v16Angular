@@ -5,14 +5,15 @@
 @import "./assets/styles/foundation.css";
 @import "./assets/material-override.scss";
 @import "./assets/i360-styles.scss";
-@font-face {
-	font-family: 'CanadianaTextWEB';
-	src: url("./assets/font/CanadianaTextWEB-Regular.otf") format("opentype");
-  }
 
-  body {
+@font-face {
     font-family: 'CanadianaTextWEB';
-  }
+    src: url("./assets/font/CanadianaTextWEB-Regular.otf") format("opentype");
+}
+
+body {
+    font-family: 'CanadianaTextWEB';
+}
 
 .content {
     height: 400px;
@@ -182,13 +183,5 @@ input[type="text"].ship-ui-error {
 
 
 
-    
+
 }
-
-
-
-
-
-
- 
- 

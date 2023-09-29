@@ -64,8 +64,8 @@ export class OutboundTrendsComponent {
 
 //https://www.benmvp.com/blog/nested-string-interpolation-in-javascript/
   private getDescriptionImageSource(line1Value: number, line2Value: number): string {
-    const downRightArrowSvg = '../../../assets/images/down-right-arrow.svg';
-    const upRightArrowSvg = '../../../assets/images/up-right-arrow.svg';
+    const downRightArrowSvg = '../../../assets/images/i360/down-right-arrow.svg';
+    const upRightArrowSvg = '../../../assets/images/i360/up-right-arrow.svg';
     let isDown = line1Value > line2Value;
     const descriptionImageSource = isDown ? downRightArrowSvg : upRightArrowSvg;
     return descriptionImageSource;
@@ -197,7 +197,7 @@ export class OutboundTrendsComponent {
       {
         name: 'second line',
         type: 'line',
-        symbol: 'image://../../../assets/images/circle-outbound-trends-connector.svg',  //https://echarts.apache.org/en/option.html#series-line.symbolSize
+        symbol: 'image://../../../assets/images/i360/circle-outbound-trends-connector.svg',  //https://echarts.apache.org/en/option.html#series-line.symbolSize
         symbolSize: 10,
         data: this.line2Data,
         //https://apache.github.io/echarts-handbook/en/how-to/chart-types/line/basic-line/

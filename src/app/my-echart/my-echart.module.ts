@@ -15,6 +15,8 @@ import { TimingComponent } from './timing/timing.component'
 import { DateCalendarHeaderComponent } from './timing/date-calendar-header/date-calendar-header.component';
 import { DateCalendarComponent } from './timing/date-calendar/date-calendar.component';
 import { DeliveryPerformanceComponent } from './delivery-performance/delivery-performance.component';
+import { I360SideNavComponent } from './i360-side-nav/i360-side-nav.component';
+import { I360PageComponent } from './i360-page/i360-page.component';
  
  
 
@@ -25,6 +27,8 @@ import { DeliveryPerformanceComponent } from './delivery-performance/delivery-pe
     DateCalendarComponent,
     DateCalendarHeaderComponent,
     DeliveryPerformanceComponent,
+    I360SideNavComponent,
+    I360PageComponent,
   ],
   imports: [
     CommonModule,

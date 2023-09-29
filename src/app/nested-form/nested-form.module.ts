@@ -13,21 +13,23 @@ import { FormModelComponent } from './form-model/form-model.component';
 import { FormFactoryComponent } from './form-factory/form-factory.component';
 import { FormActionComponent } from './form-action/form-action.component';
 import { FormSearchComponent } from './form-search/form-search.component';
-import {ClickEventDirective} from './form-search/click-event.directive';
-import { SetErrorComponent } from './set-error/set-error.component'
-export const routes: Routes=  [
+import { ClickEventDirective } from './form-search/click-event.directive';
+import { SetErrorComponent } from './set-error/set-error.component';
+import { TypedFormComponent } from './typed-form/typed-form.component'
+export const routes: Routes = [
   {
     path: 'NestedForm',
     component: NestedFormComponent,
     children: [
-      { path: 'setError',component: SetErrorComponent },
-      { path: 'NestedFormArray',component: NestedFormArrayComponent },
-      { path: 'NestedFormArray2', component: NestedFormArray2Component  },
-      { path: 'NestedFormGroup',component: NestedFormGroupComponent },
-      { path: 'PatchFormArray',component: PatchFormArrayComponent },
-      { path: 'FormSearch',component: FormSearchComponent },
- 
-  ]
+      { path: 'setError', component: SetErrorComponent },
+      { path: 'NestedFormArray', component: NestedFormArrayComponent },
+      { path: 'NestedFormArray2', component: NestedFormArray2Component },
+      { path: 'NestedFormGroup', component: NestedFormGroupComponent },
+      { path: 'PatchFormArray', component: PatchFormArrayComponent },
+      { path: 'FormSearch', component: FormSearchComponent },
+      { path: 'typedForm', component: TypedFormComponent }
+
+    ]
   }
 ];
 @NgModule({
@@ -41,7 +43,8 @@ export const routes: Routes=  [
     FormActionComponent,
     FormSearchComponent,
     ClickEventDirective,
-    SetErrorComponent
+    SetErrorComponent,
+    TypedFormComponent
   ],
   imports: [
     CommonModule,
@@ -51,6 +54,6 @@ export const routes: Routes=  [
     MaterialModule,
     RouterModule.forChild(routes)
   ],
-  exports:[RouterModule]
+  exports: [RouterModule]
 })
 export class NestedFormModule { }

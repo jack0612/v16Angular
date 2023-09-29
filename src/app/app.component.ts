@@ -7,6 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NgLog } from './angular-event/decorator/classDecorator/ng-log/ng-log';
 import { mapFitBounds } from '../app/google-maps/mapFitBounds.util'
 import { AppUtil } from './snap-ship/utils/app-util';
+import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
 //https://github.com/angular/flex-layout/wiki/BreakPoints
 //https://www.youtube.com/watch?v=DcqeQ-ku6r8&t=171s: Angular Debugging of "Expression Changed" Error
 //https://www.youtube.com/watch?v=z90TADl4Moc
@@ -49,12 +50,13 @@ export class AppComponent {
     '4 PM',
     '5 PM'
   ];
-
+  deviceInfo:DeviceInfo;
   constructor(public mediaObserver: MediaObserver, public translateService: TranslateService,
+    private dds:DeviceDetectorService
   ) {
     const appUtil = new AppUtil();
-    console.log('appUtil', appUtil)
-    console.log('AppUtil', AppUtil)
+    this.deviceInfo=this.dds.getDeviceInfo();
+
   }
 
   ngOnInit() {
