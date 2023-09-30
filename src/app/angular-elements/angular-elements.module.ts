@@ -4,11 +4,20 @@ import { AngularElementsComponent } from './angular-elements.component';
 import { AwesomeElementComponent } from './awesome-element/awesome-element.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { createCustomElement } from '@angular/elements';
+import { CustomTwoWayBindingComponent } from './custom-two-way-binding/custom-two-way-binding.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
-  declarations: [AngularElementsComponent, AwesomeElementComponent],
-  imports: [BrowserModule],
+  declarations: [AngularElementsComponent, AwesomeElementComponent, CustomTwoWayBindingComponent],
+  imports: [
+    CommonModule,
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule,
+  ],
   // entryComponents: [AwesomeElementComponent], // (1)
  
   schemas: [CUSTOM_ELEMENTS_SCHEMA], // (4)

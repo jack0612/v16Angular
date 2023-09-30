@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MediaChange, MediaObserver } from '@angular/flex-layout';
 import { BehaviorSubject, Subscription, combineLatest } from 'rxjs';
 import { InjectionToken, NgModule } from '@angular/core';
@@ -8,6 +8,7 @@ import { NgLog } from './angular-event/decorator/classDecorator/ng-log/ng-log';
 import { mapFitBounds } from '../app/google-maps/mapFitBounds.util'
 import { AppUtil } from './snap-ship/utils/app-util';
 import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
+import { DataService, DataService2, FakeDataService, FakeDataService2 } from './app.module';
 //https://github.com/angular/flex-layout/wiki/BreakPoints
 //https://www.youtube.com/watch?v=DcqeQ-ku6r8&t=171s: Angular Debugging of "Expression Changed" Error
 //https://www.youtube.com/watch?v=z90TADl4Moc
@@ -52,7 +53,9 @@ export class AppComponent {
   ];
   deviceInfo:DeviceInfo;
   constructor(public mediaObserver: MediaObserver, public translateService: TranslateService,
-    private dds:DeviceDetectorService
+    private dds:DeviceDetectorService,
+     @Inject(DataService) private fakeDataService:      FakeDataService,
+     @Inject(DataService2) private fakeDataService2:      FakeDataService2,
   ) {
     const appUtil = new AppUtil();
     this.deviceInfo=this.dds.getDeviceInfo();
@@ -60,6 +63,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
+    this.fakeDataService.get();
     this.practiceBehaviourSubject();
     mapFitBounds(document.getElementById("map-canvas"), google);
     //console.log('==========BREAKPOINTS, DEFAULT_BREAKPOINTS ',BREAKPOINTS, DEFAULT_BREAKPOINTS)

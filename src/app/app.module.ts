@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { InjectionToken, NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { MaterialModule } from './material/material.module'
 import { AppComponent } from './app.component';
@@ -101,11 +101,33 @@ import { AngularElementsModule } from './angular-elements/angular-elements.modul
 import { DynamicRoutingModule } from './dynamic-routing/dynamic-routing.module';
 import { ResettableInputComponent } from './custom-control/resettable-input/resettable-input.component';
 import { CvaSelectComponent } from './custom-control/resettable-input/cva-select.component';
-import { CvaRadioGroupComponent} from './custom-control/resettable-input/cva-radio-group.component';
+import { CvaRadioGroupComponent } from './custom-control/resettable-input/cva-radio-group.component';
 import { ResettableInputParentComponent } from './custom-control/resettable-input/resettable-input-parent/resettable-input-parent.component';
-import {MyEchartModule } from './my-echart/my-echart.module'
+import { MyEchartModule } from './my-echart/my-echart.module'
 import { NgrxV16Component } from './ngrx-v16/ngrx-v16.component';
+
+
+export const DataService  = new InjectionToken<string>('DataService ');
+export const DataService2  = new InjectionToken<string>('DataService2');
+export class FakeDataService {
+  static FakeDataServiceInstance = 0;
+  constructor() {
+    FakeDataService.FakeDataServiceInstance++;
+    console.log('FakeDataServiceInstance', FakeDataService.FakeDataServiceInstance);
+  }
+  get(){}
+}
+
+export class FakeDataService2 {
+  static FakeDataServiceInstance2 = 0;
+  constructor() {
+    FakeDataService2.FakeDataServiceInstance2++;
+    console.log('FakeDataServiceInstance2', FakeDataService2.FakeDataServiceInstance2);
+  }
+  get(){}
  
+}
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json?v=' + new Date().getTime());
 }
@@ -258,7 +280,7 @@ export const CustomBreakPointsProvider = {
     AngularElementsModule,
     DynamicRoutingModule,
     MyEchartModule,
-    
+
     NgrxV16Component
 
 
@@ -266,6 +288,8 @@ export const CustomBreakPointsProvider = {
   ],
   providers: [
     CustomBreakPointsProvider,
+    { provide: DataService, useClass: FakeDataService },
+    { provide: DataService2, useValue: new FakeDataService2() },
   ],
   bootstrap: [AppComponent]
 })

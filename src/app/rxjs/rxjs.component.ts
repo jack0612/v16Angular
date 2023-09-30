@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { DataService, DataService2, FakeDataService, FakeDataService2 } from '../app.module';
 
 @Component({
   selector: 'app-rxjs',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RxjsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    @Inject(DataService) private fakeDataService:      FakeDataService,
+    @Inject(DataService2) private fakeDataService2:      FakeDataService2,
+  ) { }
 
   ngOnInit(): void {
   }
