@@ -7,10 +7,12 @@ import { createCustomElement } from '@angular/elements';
 import { CustomTwoWayBindingComponent } from './custom-two-way-binding/custom-two-way-binding.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
+import { SanitizationComponent } from './sanitization/sanitization.component';
+import { ContentChildComponent } from './content-child/content-child.component';
 
 
 @NgModule({
-  declarations: [AngularElementsComponent, AwesomeElementComponent, CustomTwoWayBindingComponent],
+  declarations: [AngularElementsComponent, AwesomeElementComponent, CustomTwoWayBindingComponent, SanitizationComponent, ContentChildComponent],
   imports: [
     CommonModule,
     BrowserModule,

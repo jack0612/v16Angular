@@ -1,14 +1,24 @@
 <mat-tab-group>
     <mat-tab label="custom-two-way-binding">
         <app-custom-two-way-binding [(message)]="title"></app-custom-two-way-binding>
-        
     </mat-tab>
 
+    <mat-tab label="sanitization">
+        <app-sanitization></app-sanitization>
+    </mat-tab>
 
+    <mat-tab label="contentChild">
+        <app-content-child>
+            <div ngProjectAs='header'>Card Header</div>
+            <span id='card-sub-header'>Card Sub Header</span>
+            <div class="card-body">
+                This is a card Body!!!
+            </div>
+            <footer title="card-footer">
+                Card Footer.
+            </footer>
+        </app-content-child>
 
-
-
+    </mat-tab>
 
 </mat-tab-group>
-
-title:{{title}}
