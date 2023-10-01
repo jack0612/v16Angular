@@ -9,10 +9,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
 import { SanitizationComponent } from './sanitization/sanitization.component';
 import { ContentChildComponent } from './content-child/content-child.component';
+import { ChildComponent, ParentComponent, SimpleService, ViewProvidersComponent } from './view-providers/view-providers.component';
+import { DirectiveExportAsDirective, MainComponent } from './directive-export-as/directive-export-as.component';
 
 
 @NgModule({
-  declarations: [AngularElementsComponent, AwesomeElementComponent, CustomTwoWayBindingComponent, SanitizationComponent, ContentChildComponent],
+  declarations: [
+    AngularElementsComponent, 
+    AwesomeElementComponent, 
+    CustomTwoWayBindingComponent, 
+    SanitizationComponent, 
+    ContentChildComponent, 
+    ViewProvidersComponent,
+    ParentComponent,
+    ChildComponent,
+    DirectiveExportAsDirective,
+    MainComponent
+  ],
   imports: [
     CommonModule,
     BrowserModule,
@@ -23,6 +36,9 @@ import { ContentChildComponent } from './content-child/content-child.component';
   // entryComponents: [AwesomeElementComponent], // (1)
  
   schemas: [CUSTOM_ELEMENTS_SCHEMA], // (4)
+  providers:[
+    SimpleService
+  ]
 })
 export class AngularElementsModule {
   constructor(public injector: Injector) {
