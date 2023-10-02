@@ -15,12 +15,13 @@ import { RetryWhenComponent } from './retry-when/retry-when.component';
 import { CustomOperatorComponent } from './custom-operator/custom-operator.component';
 import { RetryWhen2Component } from './retry-when2/retry-when2.component';
 import { ThrowErrorComponent } from './throw-error/throw-error.component';
+import { ShareComponent } from './share/share.component';
 
 
 
 @NgModule({
   declarations: [ConcatMapComponent, RxjsComponent, SwitchMapComponent, MergeMapComponent, 
-    ShareReplayComponent, TakeComponent, WithLatestFromComponent, RetryWhenComponent, CustomOperatorComponent, RetryWhen2Component, ThrowErrorComponent],
+    ShareReplayComponent, TakeComponent, WithLatestFromComponent, RetryWhenComponent, CustomOperatorComponent, RetryWhen2Component, ThrowErrorComponent, ShareComponent],
   imports: [
     CommonModule,
     BrowserModule,
