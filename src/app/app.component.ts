@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, Renderer2 } from '@angular/core';
 import { MediaChange, MediaObserver } from '@angular/flex-layout';
 import { BehaviorSubject, Subscription, combineLatest } from 'rxjs';
 import { InjectionToken, NgModule } from '@angular/core';
@@ -9,6 +9,8 @@ import { mapFitBounds } from '../app/google-maps/mapFitBounds.util'
 import { AppUtil } from './snap-ship/utils/app-util';
 import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
 import { DataService, DataService2, FakeDataService, FakeDataService2 } from './app.module';
+import { CountClicks } from './angular-event/decorator/click-count.decorator';
+
 //https://github.com/angular/flex-layout/wiki/BreakPoints
 //https://www.youtube.com/watch?v=DcqeQ-ku6r8&t=171s: Angular Debugging of "Expression Changed" Error
 //https://www.youtube.com/watch?v=z90TADl4Moc
@@ -27,6 +29,7 @@ export const BreakPointsProvider = {
   multi: true
 };
 @NgLog()
+@CountClicks('#myButton')
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -51,42 +54,55 @@ export class AppComponent {
     '4 PM',
     '5 PM'
   ];
-  deviceInfo:DeviceInfo;
+  deviceInfo: DeviceInfo;
+  show_myButton: boolean = false;
+
   constructor(public mediaObserver: MediaObserver, public translateService: TranslateService,
-    private dds:DeviceDetectorService,
-     @Inject(DataService) private fakeDataService:      FakeDataService,
-     @Inject(DataService2) private fakeDataService2:      FakeDataService2,
+    private renderer: Renderer2,
+    private dds: DeviceDetectorService,
+    @Inject(DataService) private fakeDataService: FakeDataService,
+    @Inject(DataService2) private fakeDataService2: FakeDataService2,
   ) {
     const appUtil = new AppUtil();
-    this.deviceInfo=this.dds.getDeviceInfo();
+    this.deviceInfo = this.dds.getDeviceInfo();
 
   }
 
   ngOnInit() {
-    this.fakeDataService.get();
-    this.practiceBehaviourSubject();
-    mapFitBounds(document.getElementById("map-canvas"), google);
+    console.log('---------app.component.ngInit')
+    // this.fakeDataService.get();
+    // this.practiceBehaviourSubject();
+    // mapFitBounds(document.getElementById("map-canvas"), google);
     //console.log('==========BREAKPOINTS, DEFAULT_BREAKPOINTS ',BREAKPOINTS, DEFAULT_BREAKPOINTS)
     // this.mediaSub = this.mediaObserver.media$.subscribe(
     //   (result: MediaChange) => {
- 
+
     //     this.deviceXs = result.mqAlias === 'xs' ? true : false;
     //   }
     // );
-    const self = this;
-    // this language will be used as a fallback when a translation isn't found in the current language
-    self.translateService.setDefaultLang('en');
-    // the lang to use, if the lang isn't available, it will use the current loader to get them
-    let code = this.translateService.getBrowserLang();
-    self.translateService.use(code);
-    const existingPickupHourRange: number[] = [12, 17]; //[14,15];//
-    this.setEarliestTimeSlotByExcludingExistingPickup(existingPickupHourRange, this.EARLIEST_TIMES);
-    this.setLatestTimeSlotByExcludingExistingPickup(existingPickupHourRange, this.LATEST_TIMES);
-    const selectedEh = 15;
-    this.setLatestTimeSlot(existingPickupHourRange, selectedEh);
-    const selectedLh = 16;
-    this.setEarliestTimeSlot(existingPickupHourRange, selectedLh)
+    // const self = this;
+    // // this language will be used as a fallback when a translation isn't found in the current language
+    // self.translateService.setDefaultLang('en');
+    // // the lang to use, if the lang isn't available, it will use the current loader to get them
+    // let code = this.translateService.getBrowserLang();
+    // self.translateService.use(code);
+    // const existingPickupHourRange: number[] = [12, 17]; //[14,15];//
+    // this.setEarliestTimeSlotByExcludingExistingPickup(existingPickupHourRange, this.EARLIEST_TIMES);
+    // this.setLatestTimeSlotByExcludingExistingPickup(existingPickupHourRange, this.LATEST_TIMES);
+    // const selectedEh = 15;
+    // this.setLatestTimeSlot(existingPickupHourRange, selectedEh);
+    // const selectedLh = 16;
+    // this.setEarliestTimeSlot(existingPickupHourRange, selectedLh)
   }
+  onShow_myButton() {
+    this.show_myButton = true;
+  }
+
+  // ngAfterViewIni(){
+  //   console.log('----------ngAfterContentChecked')
+  // }
+
+
   ngOnDestroy() {
 
   }
@@ -258,3 +274,5 @@ export class AppComponent {
   }
 
 }
+
+
