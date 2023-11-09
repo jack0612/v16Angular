@@ -1,0 +1,14 @@
+<h2>Reactive form example</h2>
+<form [formGroup]="form">
+  <app-combobox
+    placeholder="Select option"
+    required="true"
+    formControlName="fruit"
+    [options]="options"
+  ></app-combobox>
+  <p></p>
+  <app-toggle formControlName="toggle"></app-toggle>
+  <button type="submit">Submit form</button>
+</form>
+
+<p>Form value: {{ form.value | json }}</p>

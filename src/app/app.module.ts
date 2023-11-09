@@ -105,6 +105,10 @@ import { CvaRadioGroupComponent } from './custom-control/resettable-input/cva-ra
 import { ResettableInputParentComponent } from './custom-control/resettable-input/resettable-input-parent/resettable-input-parent.component';
 import { MyEchartModule } from './my-echart/my-echart.module'
 import { NgrxV16Component } from './ngrx-v16/ngrx-v16.component';
+import { CvaDirectiveComponent } from './custom-control/cva-directive/cva-directive.component';
+
+import { ToggleComponent } from './custom-control/cva-directive/toggle/toggle.component';
+import { ComboboxComponent } from './custom-control/cva-directive/combobox/combobox.component';
 
 
 export const DataService  = new InjectionToken<string>('DataService ');
@@ -205,7 +209,10 @@ export const CustomBreakPointsProvider = {
     ResettableInputComponent,
     ResettableInputParentComponent,
     CvaSelectComponent,
-    CvaRadioGroupComponent
+    CvaRadioGroupComponent,
+    CvaDirectiveComponent,
+    ComboboxComponent,
+    ToggleComponent
   ],
   imports: [
     BrowserModule,
